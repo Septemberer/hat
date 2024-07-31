@@ -5,63 +5,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <title>Tasty Hat</title>
     <link rel="stylesheet" href="data/styles.css" type="text/css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Oswald:400,300" type="text/css">
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 </head>
 <body>
-<h1 id="heading">Нажми кнопку, чтобы получить слово</h1>
-<h1 id="counter">Угадано слов: 0</h1>
-<script>
-    let counter = 0;
-    function update_word() {
-        Array.prototype.random = function () {
-            return this[Math.floor((Math.random()*this.length))];
-        };
-        const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
-        reader.open('get', 'data/word_base_easy.txt', false);
-        reader.send(null);
-        let word_list = reader.responseText.split('\n');
-        document.getElementById('heading').innerHTML = word_list.random();
-    }
-    function inc_counter() {
-        counter++;
-        document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
-    }
-    function dec_counter() {
-        counter -= 4;
-        document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
-    }
-    function check() {
-        if (document.getElementById('start').innerHTML === "Старт") {
-            dec_counter()
-            alert("Жулик!!!")
-            return
+<div id="body">
+    <h1 id="heading">Готовы?</h1>
+    <h1 id="counter">Угадано слов: 0</h1>
+    <script>
+        let counter = 0;
+
+        function update_word() {
+            Array.prototype.random = function () {
+                return this[Math.floor((Math.random() * this.length))];
+            };
+            const reader = new XMLHttpRequest() || new ActiveXObject('MSXML2.XMLHTTP');
+            reader.open('get', 'data/word_base_easy.txt', false);
+            reader.send(null);
+            let word_list = reader.responseText.split('\n');
+            document.getElementById('heading').innerHTML = word_list.random().toUpperCase();
         }
-        update_word()
-    }
-    function reset() {
-        if (document.getElementById('start').innerHTML === "Старт") {
-            update_word()
-            document.getElementById('start').innerHTML = "Обнуление"
-        } else {
-            counter = 0
-            document.getElementById('heading').innerHTML = 'Нажми кнопку, чтобы получить слово';
+
+        function inc_counter() {
+            counter++;
             document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
-            document.getElementById('start').innerHTML = "Старт"
         }
-    }
-    onload(function () {
-        reset()
-    })
-</script>
-<button onclick="reset();">
-    <h2 id="start">Старт</h2>
-</button>
-<button onclick="check();inc_counter()">
-    <h2> Угадал </h2>
-</button>
-<button onclick="check()">
-    <h2> Не угадал </h2>
-</button>
+
+        function dec_counter() {
+            counter -= 4;
+            document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
+        }
+
+        function check() {
+            if (document.getElementById('start').innerHTML === "Старт") {
+                dec_counter()
+                alert("Жулик!!!")
+                return
+            }
+            update_word()
+        }
+
+        function reset() {
+            if (document.getElementById('start').innerHTML === "Старт") {
+                update_word()
+                document.getElementById('start').innerHTML = "Обнуление"
+            } else {
+                counter = 0
+                document.getElementById('heading').innerHTML = 'Готовы?';
+                document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
+                document.getElementById('start').innerHTML = "Старт"
+            }
+        }
+
+        onload(function () {
+            reset()
+        })
+    </script>
+    <button class="button-64"
+            role="button"
+            id="start_button"
+            onclick="reset();">
+        <span class="text">
+            <h2 id="start">Старт</h2>
+        </span>
+    </button>
+    <button class="button-64"
+            role="button"
+            id="yes_button"
+            onclick="check();inc_counter()">
+        <span class="text">
+            <h2> Угадал </h2>
+        </span>
+    </button>
+    <button class="button-64"
+            role="button"
+            id="no_button"
+            onclick="check()">
+        <span class="text">
+            <h2> Не угадал </h2>
+        </span>
+    </button>
+</div>
 </body>
 </html>
