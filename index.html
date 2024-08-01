@@ -9,9 +9,9 @@
 </head>
 <body>
 <div id="body">
-    <h1 id="counter">Угадано слов: 0</h1>
+    <h1 id="counter">РЕЗУЛЬТАТ: 0</h1>
     <div id="area">
-        <h1 class="rounded-border-gradient" id="heading">Готовы?</h1>
+        <h1 class="rounded-border-gradient" id="heading">ГОТОВЫ?</h1>
     </div>
     <script>
         let counter = 0;
@@ -29,12 +29,12 @@
 
         function inc_counter() {
             counter++;
-            document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
+            document.getElementById('counter').innerHTML = 'РЕЗУЛЬТАТ: ' + counter;
         }
 
         function dec_counter() {
             counter -= 4;
-            document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
+            document.getElementById('counter').innerHTML = 'РЕЗУЛЬТАТ: ' + counter;
         }
 
         function check() {
@@ -52,8 +52,8 @@
                 document.getElementById('start').innerHTML = "Обнуление"
             } else {
                 counter = 0
-                document.getElementById('heading').innerHTML = 'Готовы?';
-                document.getElementById('counter').innerHTML = 'Угадано слов: ' + counter;
+                document.getElementById('heading').innerHTML = 'ГОТОВЫ?';
+                document.getElementById('counter').innerHTML = 'РЕЗУЛЬТАТ: ' + counter;
                 document.getElementById('start').innerHTML = "Старт"
             }
         }
@@ -77,7 +77,7 @@
                     id="yes_button"
                     onclick="check();inc_counter()">
         <span class="text">
-            <h2>Yes</h2>
+            <h2>Да</h2>
         </span>
             </button>
         </div>
@@ -87,7 +87,7 @@
                     id="no_button"
                     onclick="check()">
         <span class="text">
-            <h2>No</h2>
+            <h2>Нет</h2>
         </span>
             </button>
         </div>
