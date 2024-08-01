@@ -64,9 +64,20 @@
     cursor: pointer;
 }
 
-.button-64:active,
-.button-64:hover {
+.button-64:active {
     outline: 0;
+}
+
+@media (hover: none), (pointer: coarse) {
+    .button-64 {
+        outline: 0;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .button-64 {
+        outline: 0;
+    }
 }
 
 .button-64 span {
