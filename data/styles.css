@@ -115,8 +115,8 @@ div.yes_no {
         inline-size: auto;
         aspect-ratio: 10;
         border: solid 0.2em transparent;
-        border-radius: 2em;
-        padding: 0.5em;
+        border-radius: 3em;
+        padding: 2em;
         background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8)) padding-box,
         linear-gradient(#CD5C5C, #ED760E) border-box;
     }
