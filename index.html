@@ -9,7 +9,9 @@
 </head>
 <body>
 <div id="body">
-    <h1 id="heading">Готовы?</h1>
+    <div id="area">
+        <h1 class="rounded-border-gradient" id="heading">Готовы?</h1>
+    </div>
     <h1 id="counter">Угадано слов: 0</h1>
     <script>
         let counter = 0;
@@ -68,22 +70,28 @@
             <h2 id="start">Старт</h2>
         </span>
     </button>
-    <button class="button-64"
-            role="button"
-            id="yes_button"
-            onclick="check();inc_counter()">
+    <div id="yes_no">
+        <div class="yes_no">
+            <button class="button-64"
+                    role="button"
+                    id="yes_button"
+                    onclick="check();inc_counter()">
         <span class="text">
-            <h2> Угадал </h2>
+            <h2>Yes</h2>
         </span>
-    </button>
-    <button class="button-64"
-            role="button"
-            id="no_button"
-            onclick="check()">
+            </button>
+        </div>
+        <div class="yes_no">
+            <button class="button-64"
+                    role="button"
+                    id="no_button"
+                    onclick="check()">
         <span class="text">
-            <h2> Не угадал </h2>
+            <h2>No</h2>
         </span>
-    </button>
+            </button>
+        </div>
+    </div>
 </div>
 </body>
 </html>

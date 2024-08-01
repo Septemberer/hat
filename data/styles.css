@@ -1,42 +1,60 @@
-#heading {
-    margin-top: 30%;
+@import "https://unpkg.com/open-props" layer(design.system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+
+#area {
+    margin-top: 3em;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
     font-family: "Courier New", "Baskerville Old Face", emoji;
 }
 #counter {
-    margin-top: 0;
+    margin-top: 1em;
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
     font-family: "Courier New", system-ui;
+    font-size: 40px;
 }
 
 #start_button {
     text-align-all: center;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 15%;
+    margin-right: 15%;
     font-family: "Courier New", system-ui;
-    font-size: 16px;
+    width: 70%;
 }
 #yes_button {
     text-align-all: center;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 0;
+    margin-right: 10%;
+    align-self: center;
+    width: 100%;
     font-family: "Courier New", system-ui;
-    font-size: 16px;
     background-image: linear-gradient(144deg, #44944A, #98FB98 50%, #00FF7F);
 }
 #no_button {
     text-align-all: center;
-    margin-top: 1em;
-    margin-left: auto;
-    margin-right: auto;
+    align-self: center;
+    margin-left: 6%;
+    margin-right: 0;
+    width: 100%;
     font-family: "Courier New", system-ui;
-    font-size: 16px;
     background-image: linear-gradient(144deg, #EE204D, #CD5C5C 50%, #FF2400);
+}
+
+#yes_no {
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+    text-align-all: center;
+}
+
+div.yes_no {
+    margin-top: 4%;
+    display: inline-block;
+    text-align-all: center;
+    width: 48%;
 }
 
 /* CSS */
@@ -53,7 +71,7 @@
     font-size: 20px;
     justify-content: center;
     line-height: 1em;
-    max-width: 100%;
+    max-width: 200%;
     min-width: 40%;
     padding: 8px;
     text-decoration: none;
@@ -64,21 +82,11 @@
     cursor: pointer;
 }
 
-.button-64:active {
+.button-64:active,
+.button-64:hover {
     outline: 0;
 }
 
-@media (hover: none), (pointer: coarse) {
-    .button-64 {
-        outline: 0;
-    }
-}
-
-@media (hover: hover) and (pointer: fine) {
-    .button-64 {
-        outline: 0;
-    }
-}
 
 .button-64 span {
     background-color: rgb(5, 6, 45);
@@ -93,9 +101,29 @@
     background: none;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 680px) {
     .button-64 {
-        font-size: 24px;
-        min-width: 196px;
+        font-size: 16px;
+    }
+}
+
+@layer demo {
+    .rounded-border-gradient {
+        inline-size: auto;
+        aspect-ratio: 10;
+        border: solid 20px transparent;
+        border-radius: 30px;
+        background:
+                linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8)) padding-box,
+                linear-gradient(#CD5C5C, #ED760E) border-box;
+    }
+}
+
+@layer demo.support {
+    body {
+        display: grid;
+        place-content: center;
+        padding: 1em;
+        gap: 1em;
     }
 }
