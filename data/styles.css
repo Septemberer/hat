@@ -1,5 +1,5 @@
-@import "https://unpkg.com/open-props" layer(design.system);
-@import "https://unpkg.com/open-props/normalize.min.css" layer(demo.support);
+@import "https://unpkg.com/open-props" layer(design . system);
+@import "https://unpkg.com/open-props/normalize.min.css" layer(demo . support);
 
 #area {
     margin-top: 3em;
@@ -8,6 +8,7 @@
     width: fit-content;
     font-family: "Courier New", "Baskerville Old Face", emoji;
 }
+
 #counter {
     margin-top: 1em;
     margin-left: auto;
@@ -24,6 +25,7 @@
     font-family: "Courier New", system-ui;
     width: 70%;
 }
+
 #yes_button {
     text-align-all: center;
     margin-left: 0;
@@ -33,6 +35,7 @@
     font-family: "Courier New", system-ui;
     background-image: linear-gradient(144deg, #44944A, #98FB98 50%, #00FF7F);
 }
+
 #no_button {
     text-align-all: center;
     align-self: center;
@@ -111,11 +114,11 @@ div.yes_no {
     .rounded-border-gradient {
         inline-size: auto;
         aspect-ratio: 10;
-        border: solid 20px transparent;
-        border-radius: 30px;
-        background:
-                linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8)) padding-box,
-                linear-gradient(#CD5C5C, #ED760E) border-box;
+        border: solid 0.2em transparent;
+        border-radius: 2em;
+        padding: 0.5em;
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.8)) padding-box,
+        linear-gradient(#CD5C5C, #ED760E) border-box;
     }
 }
 
