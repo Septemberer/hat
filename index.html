@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="data/styles.css" type="text/css">
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 </head>
-<body>
+<body id="main">
 <div id="body">
     <h1 id="counter">РЕЗУЛЬТАТ: 0</h1>
     <div id="area">
@@ -38,7 +38,7 @@
         }
 
         function check() {
-            if (document.getElementById('start').innerHTML === "Старт") {
+            if (document.getElementById('start').innerHTML === "СТАРТ") {
                 dec_counter()
                 alert("Жулик!!!")
                 return
@@ -47,14 +47,14 @@
         }
 
         function reset() {
-            if (document.getElementById('start').innerHTML === "Старт") {
+            if (document.getElementById('start').innerHTML === "СТАРТ") {
                 update_word()
-                document.getElementById('start').innerHTML = "Обнуление"
+                document.getElementById('start').innerHTML = "ОБНУЛЕНИЕ"
             } else {
                 counter = 0
                 document.getElementById('heading').innerHTML = 'ГОТОВЫ?';
                 document.getElementById('counter').innerHTML = 'РЕЗУЛЬТАТ: ' + counter;
-                document.getElementById('start').innerHTML = "Старт"
+                document.getElementById('start').innerHTML = "СТАРТ"
             }
         }
 
@@ -67,7 +67,7 @@
             id="start_button"
             onclick="reset();">
         <span class="text">
-            <h2 id="start">Старт</h2>
+            <h2 id="start">СТАРТ</h2>
         </span>
     </button>
     <div id="yes_no">
@@ -77,7 +77,7 @@
                     id="yes_button"
                     onclick="check();inc_counter()">
         <span class="text">
-            <h2>Да</h2>
+            <h2>ДА</h2>
         </span>
             </button>
         </div>
@@ -87,7 +87,7 @@
                     id="no_button"
                     onclick="check()">
         <span class="text">
-            <h2>Нет</h2>
+            <h2>НЕТ</h2>
         </span>
             </button>
         </div>
